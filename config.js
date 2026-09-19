@@ -5,7 +5,6 @@ window.ZENZIA_CONFIG = {
   slideDurationsMs: {
     1: 3000,                     // Slide 1: 3 seconds.
     2: 5000,                     // Slide 2: 5 seconds.
-    3: 5000,                     // Slide 3: 5 seconds.
   },
   loop: true,                     // Restart at page 1 after the last page.
   startSlide: 1,                  // A #pagina-N URL takes priority.
