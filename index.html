@@ -3,63 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#eef0e6">
-  <meta name="description" content="Menú Zenzia, barra de infusiones. Conoce nuestros tés, tisanas, bebidas y snacks.">
-  <title>Menú Zenzia · Barra de infusiones</title>
+  <meta name="theme-color" content="#000000">
+  <title>Zenzia</title>
   <link rel="stylesheet" href="./styles.css">
-  <script src="./config.js" defer></script>
-  <script src="./script.js" defer></script>
 </head>
 <body>
-  <noscript><p class="no-js">Activa JavaScript para navegar por las 13 páginas del menú.</p></noscript>
-  <main id="viewer" class="viewer" aria-label="Menú Zenzia">
-    <div id="viewport" class="viewport" aria-roledescription="carrusel" aria-label="Páginas del menú" aria-describedby="navigation-help" tabindex="0">
-      <div id="slide-frame" class="slide-frame">
-        <div id="artwork" class="artwork">
-          <section class="menu-slide" data-title="Bienvenidos a Zenzia" aria-label="1 de 13: Bienvenidos a Zenzia" aria-roledescription="diapositiva">
-            <img class="menu-page" src="./assets/menu-01.webp" alt="Logotipo de Zenzia, barra de infusiones" fetchpriority="high">
-          </section>
-          <section class="menu-slide" data-title="Bebidas / Drinks" aria-label="2 de 13: Bebidas / Drinks" aria-roledescription="diapositiva" hidden>
-            <img class="menu-page" src="./assets/menu-02.webp" alt="Bebidas y precios">
-          </section>
-          <section class="menu-slide" data-title="Té Blanco" aria-label="3 de 13: Té Blanco" aria-roledescription="diapositiva" hidden>
-            <img class="menu-page" src="./assets/menu-03.webp" alt="Menú de té blanco">
-          </section>
-          <section class="menu-slide" data-title="Té Verde" aria-label="4 de 13: Té Verde" aria-roledescription="diapositiva" hidden>
-            <img class="menu-page" src="./assets/menu-04.webp" alt="Menú de té verde">
-          </section>
-          <section class="menu-slide" data-title="Té Negro · 1" aria-label="5 de 13: Té Negro, página 1" aria-roledescription="diapositiva" hidden>
-            <img class="menu-page" src="./assets/menu-05.webp" alt="Menú de té negro, página 1">
-          </section>
-          <section class="menu-slide" data-title="Té Negro · 2" aria-label="6 de 13: Té Negro, página 2" aria-roledescription="diapositiva" hidden>
-            <img class="menu-page" src="./assets/menu-06.webp" alt="Menú de té negro, página 2">
-          </section>
-          <section class="menu-slide" data-title="Té Rojo (Pu erh)" aria-label="7 de 13: Té Rojo, Pu erh" aria-roledescription="diapositiva" hidden>
-            <img class="menu-page" src="./assets/menu-07.webp" alt="Menú de té rojo Pu erh">
-          </section>
-          <section class="menu-slide" data-title="Tisana Herbal · 1" aria-label="8 de 13: Tisana Herbal, página 1" aria-roledescription="diapositiva" hidden>
-            <img class="menu-page" src="./assets/menu-08.webp" alt="Menú de tisana herbal, página 1">
-          </section>
-          <section class="menu-slide" data-title="Tisana Herbal · 2" aria-label="9 de 13: Tisana Herbal, página 2" aria-roledescription="diapositiva" hidden>
-            <img class="menu-page" src="./assets/menu-09.webp" alt="Menú de tisana herbal, página 2">
-          </section>
-          <section class="menu-slide" data-title="Tisana Frutal · 1" aria-label="10 de 13: Tisana Frutal, página 1" aria-roledescription="diapositiva" hidden>
-            <img class="menu-page" src="./assets/menu-10.webp" alt="Menú de tisana frutal, página 1">
-          </section>
-          <section class="menu-slide" data-title="Tisana Frutal · 2" aria-label="11 de 13: Tisana Frutal, página 2" aria-roledescription="diapositiva" hidden>
-            <img class="menu-page" src="./assets/menu-11.webp" alt="Menú de tisana frutal, página 2">
-          </section>
-          <section class="menu-slide" data-title="Tisana Frutal · 3" aria-label="12 de 13: Tisana Frutal, página 3" aria-roledescription="diapositiva" hidden>
-            <img class="menu-page" src="./assets/menu-12.webp" alt="Menú de tisana frutal, página 3">
-          </section>
-          <section class="menu-slide" data-title="Add-ons &amp; Snacks" aria-label="13 de 13: Add-ons y snacks" aria-roledescription="diapositiva" hidden>
-            <img class="menu-page" src="./assets/menu-13.webp" alt="Precios de complementos y snacks">
-          </section>
-        </div>
-      </div>
-    </div>
-    <p id="navigation-help" class="sr-only">Presentación automática del menú. Usa las flechas para cambiar de página, espacio para pausar o continuar y F para pantalla completa.</p>
-    <p id="status" class="sr-only" role="status" aria-live="off" aria-atomic="true"></p>
+  <main class="video-player">
+    <video
+      class="video-player__media"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      aria-label="Video de Zenzia"
+    >
+      <source src="./assets/zenzia-menu-video.mp4" type="video/mp4">
+    </video>
   </main>
 </body>
 </html>
