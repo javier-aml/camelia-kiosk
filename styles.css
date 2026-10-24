@@ -2,28 +2,29 @@
    script.js scales to fill the screen. All sizes below are stage pixels. */
 
 :root {
-  --bg: #0f231a;
-  --bg-2: #173628;
-  --bg-3: #1d4232;
-  --cream: #f3ecda;
-  --cream-70: rgba(243, 236, 218, 0.72);
-  --cream-40: rgba(243, 236, 218, 0.4);
-  --line: rgba(243, 236, 218, 0.14);
-  --gold: #d9b76a;
+  color-scheme: light;
+  --bg: #f7f6ee;
+  --bg-2: #efeee2;
+  --bg-3: #fffef8;
+  --ink: #203d30;
+  --ink-secondary: #4d5b4e;
+  --ink-muted: #62695c;
+  --line: rgba(32, 61, 48, 0.18);
+  --gold: #856020;
   --accent: var(--gold);
   --serif: 'Fraunces', 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --sans: 'Manrope', 'DM Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
-/* Category accents: elegant base, one lively note per section. */
-[data-slide='bebidas'] { --accent: #d9b76a; }
-[data-slide='blanco']  { --accent: #efe1c1; }
-[data-slide='verde']   { --accent: #9fd49b; }
-[data-slide='negro']   { --accent: #d2a46b; }
-[data-slide='rojo']    { --accent: #ee8570; }
-[data-slide='herbal']  { --accent: #c3b1ec; }
-[data-slide='frutal']  { --accent: #f6bd63; }
-[data-slide='snacks']  { --accent: #d9b76a; }
+/* Warm white palette with dark category accents for TV readability. */
+[data-slide='bebidas'] { --accent: #856020; }
+[data-slide='blanco']  { --accent: #8a631e; }
+[data-slide='verde']   { --accent: #287346; }
+[data-slide='negro']   { --accent: #343b35; }
+[data-slide='rojo']    { --accent: #b23636; }
+[data-slide='herbal']  { --accent: #705099; }
+[data-slide='frutal']  { --accent: #a35215; }
+[data-slide='snacks']  { --accent: #856020; }
 
 * { box-sizing: border-box; }
 
@@ -33,7 +34,7 @@ html, body {
   margin: 0;
   overflow: hidden;
   background: var(--bg);
-  color: var(--cream);
+  color: var(--ink);
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
 }
@@ -101,6 +102,15 @@ html, body {
 
 .menu-slide[hidden] { display: none; }
 
+/* Tint the existing white logo assets for the light background. */
+.cover__logo,
+.brand__mark,
+.brand__word,
+.tagline,
+.menu-slide::before {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(20%) saturate(1024%) hue-rotate(99deg) brightness(92%) contrast(88%);
+}
+
 /* Soft leaf watermark, bottom right. */
 .menu-slide::before {
   content: '';
@@ -110,7 +120,7 @@ html, body {
   width: 760px;
   height: 930px;
   background: url('./assets/logo-mark.png') center / contain no-repeat;
-  opacity: 0.05;
+  opacity: 0.11;
   transform: rotate(-8deg);
   pointer-events: none;
 }
@@ -120,8 +130,8 @@ html, body {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: repeating-radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.025) 0, rgba(255, 255, 255, 0.025) 1px, transparent 1px, transparent 3px);
-  mix-blend-mode: overlay;
+  background-image: repeating-radial-gradient(circle at 0 0, rgba(32, 61, 48, 0.018) 0, rgba(32, 61, 48, 0.018) 1px, transparent 1px, transparent 3px);
+  mix-blend-mode: multiply;
   opacity: 0.6;
   pointer-events: none;
 }
@@ -185,12 +195,21 @@ html, body {
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--cream-40);
+  color: var(--ink-muted);
 }
 
 .nav li {
   position: relative;
   padding-bottom: 8px;
+}
+
+.nav small {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: none;
 }
 
 .nav .is-active {
@@ -210,13 +229,13 @@ html, body {
 
 .tagline {
   height: 15px;
-  opacity: 0.55;
+  opacity: 0.85;
 }
 
 .pager {
   font-size: 18px;
   letter-spacing: 0.2em;
-  color: var(--cream-40);
+  color: var(--ink-muted);
   font-variant-numeric: tabular-nums;
 }
 
@@ -261,7 +280,7 @@ html, body {
   font-size: 24px;
   letter-spacing: 0;
   text-transform: none;
-  color: var(--cream-70);
+  color: var(--ink-secondary);
 }
 
 .eyebrow span::before {
@@ -282,13 +301,22 @@ html, body {
   line-height: 0.98;
   letter-spacing: -0.015em;
   font-variation-settings: 'opsz' 144, 'SOFT' 40;
-  color: var(--cream);
+  color: var(--accent);
 }
 
 .title em {
   font-style: italic;
   font-weight: 300;
   color: var(--accent);
+}
+
+.title__translation {
+  max-width: 28ch;
+  margin: 24px 0 0;
+  font-family: var(--serif);
+  font-size: 30px;
+  line-height: 1.3;
+  color: var(--ink-secondary);
 }
 
 .part {
@@ -300,7 +328,7 @@ html, body {
   font-size: 17px;
   font-weight: 700;
   letter-spacing: 0.22em;
-  color: var(--cream-70);
+  color: var(--ink-secondary);
 }
 
 .lead {
@@ -308,7 +336,12 @@ html, body {
   margin: 28px 0 0;
   font-size: 22px;
   line-height: 1.5;
-  color: var(--cream-70);
+  color: var(--ink-secondary);
+}
+
+.lead--en {
+  margin-top: 12px;
+  font-size: 20px;
 }
 
 .chip {
@@ -322,6 +355,14 @@ html, body {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+.chip > span {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: none;
 }
 
 /* ---------- Category cards ---------- */
@@ -354,11 +395,11 @@ html, body {
   margin-bottom: 26px;
   border-radius: 50%;
   object-fit: cover;
-  background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0.35));
+  background: radial-gradient(circle at 35% 30%, #fffef8, #e7e5d7);
   box-shadow:
     0 0 0 3px var(--bg),
     0 0 0 5px var(--accent),
-    0 30px 50px -20px rgba(0, 0, 0, 0.7);
+    0 30px 50px -20px rgba(32, 61, 48, 0.16);
 }
 
 .card__photo--empty {
@@ -383,24 +424,44 @@ html, body {
   font-size: 40px;
   line-height: 1.1;
   font-variation-settings: 'opsz' 60, 'SOFT' 30;
-  color: var(--cream);
+  color: var(--ink);
   text-wrap: balance;
 }
 
 [style*='--cols:4'] .card__name { font-size: 34px; }
 [style*='--cols:2'] .card__name { font-size: 50px; }
 
+.card__translation {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--sans);
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--ink-secondary);
+}
+
 .card__desc {
   max-width: 34ch;
   margin: 0;
   font-size: 21px;
   line-height: 1.45;
-  color: var(--cream-70);
+  color: var(--ink-secondary);
   text-wrap: pretty;
 }
 
 [style*='--cols:4'] .card__desc { font-size: 18px; max-width: 30ch; }
 [style*='--cols:2'] .card__desc { font-size: 25px; max-width: 32ch; }
+
+.card__desc--en {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 20px;
+  color: var(--ink-secondary);
+}
+
+[style*='--cols:2'] .card__desc--en { font-size: 23px; }
 
 /* ---------- Drinks page ---------- */
 
@@ -439,14 +500,23 @@ html, body {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--cream-40);
+  color: var(--ink-muted);
+}
+
+.price__detail {
+  margin-top: 12px;
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--ink-secondary);
 }
 
 .price__dots {
   flex: 1;
   align-self: center;
   height: 1px;
-  background-image: linear-gradient(to right, var(--cream-40) 0 3px, transparent 3px 12px);
+  background-image: linear-gradient(to right, var(--ink-muted) 0 3px, transparent 3px 12px);
   background-size: 12px 1px;
   opacity: 0.6;
 }
@@ -510,7 +580,7 @@ html, body {
   padding: 38px 44px;
   border: 1px solid var(--line);
   border-radius: 28px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+  background: linear-gradient(135deg, #fffef8, #efeee2);
 }
 
 .tile:last-child { grid-column: 1 / -1; }
@@ -521,6 +591,16 @@ html, body {
   font-size: 42px;
   line-height: 1.05;
   font-variation-settings: 'opsz' 72, 'SOFT' 30;
+}
+
+.tile__name small {
+  display: block;
+  margin-top: 12px;
+  font-family: var(--sans);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--ink-secondary);
 }
 
 .tile__amount {
@@ -558,7 +638,7 @@ html, body {
   font-weight: 600;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--cream-70);
+  color: var(--ink-secondary);
 }
 
 .cover__line i {
@@ -566,6 +646,22 @@ html, body {
   height: 5px;
   border-radius: 50%;
   background: var(--gold);
+}
+
+.cover__line > span {
+  position: relative;
+}
+
+.cover__line small {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: none;
 }
 
 .cover__note {

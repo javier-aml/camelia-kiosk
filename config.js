@@ -5,7 +5,7 @@ window.ZENZIA_CONFIG = {
   slideDurationsMs: {
     1: 5000,                      // Cover: 5 seconds.
     2: 10000,                     // Bebidas: 10 seconds.
-    10: 9000,                     // Add-ons & Snacks: 9 seconds.
+    15: 12000,                     // Add-ons & Snacks: 12 seconds.
   },
   loop: true,                     // Restart at page 1 after the last page.
   startSlide: 1,                  // A #pagina-N URL takes priority.
