@@ -153,8 +153,8 @@ html, body {
 }
 
 .bar--top {
-  top: 48px;
-  height: 56px;
+  top: 32px;
+  height: 96px;
 }
 
 .bar--bottom {
@@ -166,12 +166,13 @@ html, body {
 
 .brand {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
-  gap: 18px;
+  gap: 24px;
 }
 
-.brand__mark { height: 56px; }
-.brand__word { height: 22px; }
+.brand__mark { height: 96px; }
+.brand__word { height: 44px; }
 
 .nav {
   display: flex;
@@ -622,7 +623,7 @@ html, body {
 }
 
 .cover__logo {
-  height: 560px;
+  height: 640px;
 }
 
 .cover__line {
