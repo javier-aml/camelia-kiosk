@@ -49,6 +49,10 @@ Space pauses/resumes, Left/Right change pages, Home/End jump to the first/last
 page, and F toggles fullscreen. A URL such as `index.html#pagina-4` opens on
 that page. Use the browser's fullscreen or kiosk mode to hide its chrome.
 
+The menu uses a fixed white background and `color-scheme: only light` to opt out
+of browser auto-darkening. Product names use 52–60 px and ingredient descriptions
+28–34 px on the 1080p stage, with darker text for easier reading at a distance.
+
 ## Files
 
 - `index.html`: the fifteen bilingual menu pages.
