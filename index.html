@@ -3,23 +3,210 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#000000">
-  <title>Zenzia</title>
+  <meta name="theme-color" content="#f7f6ee">
+  <meta name="description" content="Menú Zenzia, barra de infusiones. Tés, tisanas, matcha, chai y snacks.">
+  <title>Menú Zenzia · Barra de infusiones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="./styles.css">
+  <script src="./config.js" defer></script>
+  <script src="./script.js" defer></script>
 </head>
 <body>
-  <main class="video-player">
-    <video
-      class="video-player__media"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="auto"
-      aria-label="Video de Zenzia"
-    >
-      <source src="./assets/zenzia-menu-video.mp4" type="video/mp4">
-    </video>
+  <noscript><p class="no-js">Activa JavaScript para navegar por las 15 páginas del menú.</p></noscript>
+  <main id="viewer" class="viewer" aria-label="Menú Zenzia">
+    <div id="viewport" class="viewport" aria-roledescription="carrusel" aria-label="Páginas del menú" aria-describedby="navigation-help" tabindex="0">
+      <div id="slide-frame" class="slide-frame">
+        <div id="artwork" class="artwork">
+          <section class="menu-slide" data-title="Bienvenidos a Zenzia" data-slide="cover" aria-roledescription="diapositiva" aria-label="1 de 15: Bienvenidos a Zenzia">
+<section class="cover">
+  <img class="cover__logo reveal" style="--i:0" src="./assets/logo-full.png" alt="Zenzia, barra de infusiones">
+  <p class="cover__line reveal" style="--i:2"><span>Té<small lang="en">Tea</small></span><i></i><span>Tisanas<small lang="en">Infusions</small></span><i></i><span>Matcha</span><i></i><span>Chai</span></p>
+  <p class="cover__note reveal" style="--i:3">Menú <span lang="en">/ Menu</span></p>
+</section>
+          </section>
+          <section class="menu-slide" data-title="Bebidas / Drinks" data-slide="bebidas" aria-roledescription="diapositiva" aria-label="2 de 15: Bebidas / Drinks" hidden><header class="bar bar--top"><a class="brand"><img class="brand__mark" src="./assets/logo-mark.png" alt=""><img class="brand__word" src="./assets/logo-word.png" alt="Zenzia"></a><ul class="nav"><li class="is-active"><span>Bebidas</span><small lang="en">Drinks</small></li><li class=""><span>Blanco</span><small lang="en">White</small></li><li class=""><span>Verde</span><small lang="en">Green</small></li><li class=""><span>Negro</span><small lang="en">Black</small></li><li class=""><span>Rojo</span><small lang="en">Pu-erh</small></li><li class=""><span>Herbal</span><small lang="en">Herbal</small></li><li class=""><span>Frutal</span><small lang="en">Fruit</small></li><li class=""><span>Antojos</span><small lang="en">Snacks</small></li></ul></header><footer class="bar bar--bottom"><img class="tagline" src="./assets/logo-tag.png" alt="Barra de infusiones"><span class="pager"><b>02</b> / 15</span></footer>
+<section class="page page--drinks">
+  <div class="head reveal" style="--i:0">
+    <p class="eyebrow">Bebidas <span lang="en">Drinks</span></p>
+    <h2 class="title">Tu té,<br>como <em>quieras.</em></h2>
+    <p class="title__translation" lang="en">Your tea, your way.</p>
+    <p class="chip">16 oz <span>Todas las bebidas · <span lang="en">All drinks</span></span></p>
+    <p class="lead">Elige cualquier té o tisana del menú y pídelo caliente, frío o frappe.</p>
+    <p class="lead lead--en" lang="en">Choose any tea or infusion, served hot, iced or blended.</p>
+  </div>
+  <ul class="prices"><li class="price reveal" style="--i:1"><span class="price__name">Caliente<small lang="en">Hot</small></span><span class="price__dots"></span><span class="price__amount"><sup>$</sup>70</span></li><li class="price reveal" style="--i:2"><span class="price__name">Frío<small lang="en">Iced</small></span><span class="price__dots"></span><span class="price__amount"><sup>$</sup>80</span></li><li class="price reveal" style="--i:3"><span class="price__name">Frappe<small lang="en">Blended</small></span><span class="price__dots"></span><span class="price__amount"><sup>$</sup>90</span></li><li class="price reveal" style="--i:4"><span class="price__name">Especial<small lang="en">Special</small><span class="price__detail">Matcha · Masala Chai · Taro · Oolong</span></span><span class="price__dots"></span><span class="price__amount"><sup>$</sup>100</span></li></ul>
+</section>
+          </section>
+          <section class="menu-slide" data-title="Té Blanco" data-slide="blanco" aria-roledescription="diapositiva" aria-label="3 de 15: Té Blanco" hidden><header class="bar bar--top"><a class="brand"><img class="brand__mark" src="./assets/logo-mark.png" alt=""><img class="brand__word" src="./assets/logo-word.png" alt="Zenzia"></a><ul class="nav"><li class=""><span>Bebidas</span><small lang="en">Drinks</small></li><li class="is-active"><span>Blanco</span><small lang="en">White</small></li><li class=""><span>Verde</span><small lang="en">Green</small></li><li class=""><span>Negro</span><small lang="en">Black</small></li><li class=""><span>Rojo</span><small lang="en">Pu-erh</small></li><li class=""><span>Herbal</span><small lang="en">Herbal</small></li><li class=""><span>Frutal</span><small lang="en">Fruit</small></li><li class=""><span>Antojos</span><small lang="en">Snacks</small></li></ul></header><footer class="bar bar--bottom"><img class="tagline" src="./assets/logo-tag.png" alt="Barra de infusiones"><span class="pager"><b>03</b> / 15</span></footer>
+<section class="page page--cat" data-cat="blanco" style="--cols:2">
+  <div class="head reveal" style="--i:0">
+    <p class="eyebrow">N° 01 <span lang="en">White tea</span></p>
+    <h2 class="title">Té<br><em>Blanco</em></h2>
+  </div>
+  <ul class="cards">
+    <li class="card reveal" style="--i:1"><img class="card__photo" src="./assets/tea/blanco-coco-thai.webp" alt="" loading="lazy"><h3 class="card__name">Blanco Coco Thai<small class="card__translation" lang="en">Thai Coconut White Tea</small></h3><p class="card__desc">Té blanco, zacate de limón y coco.</p><p class="card__desc card__desc--en" lang="en">White tea, lemongrass and coconut.</p></li>
+    <li class="card reveal" style="--i:2"><img class="card__photo" src="./assets/tea/blanco-durazno-orquidea.webp" alt="" loading="lazy"><h3 class="card__name">Blanco Durazno Orquídea<small class="card__translation" lang="en">Peach Orchid White Tea</small></h3><p class="card__desc">Té blanco, piña cristalizada, caléndula, durazno y vainilla.</p><p class="card__desc card__desc--en" lang="en">White tea, candied pineapple, marigold, peach and vanilla.</p></li>
+  </ul>
+</section>
+          </section>
+          <section class="menu-slide" data-title="Té Verde" data-slide="verde" aria-roledescription="diapositiva" aria-label="4 de 15: Té Verde" hidden><header class="bar bar--top"><a class="brand"><img class="brand__mark" src="./assets/logo-mark.png" alt=""><img class="brand__word" src="./assets/logo-word.png" alt="Zenzia"></a><ul class="nav"><li class=""><span>Bebidas</span><small lang="en">Drinks</small></li><li class=""><span>Blanco</span><small lang="en">White</small></li><li class="is-active"><span>Verde</span><small lang="en">Green</small></li><li class=""><span>Negro</span><small lang="en">Black</small></li><li class=""><span>Rojo</span><small lang="en">Pu-erh</small></li><li class=""><span>Herbal</span><small lang="en">Herbal</small></li><li class=""><span>Frutal</span><small lang="en">Fruit</small></li><li class=""><span>Antojos</span><small lang="en">Snacks</small></li></ul></header><footer class="bar bar--bottom"><img class="tagline" src="./assets/logo-tag.png" alt="Barra de infusiones"><span class="pager"><b>04</b> / 15</span></footer>
+<section class="page page--cat" data-cat="verde" style="--cols:3">
+  <div class="head reveal" style="--i:0">
+    <p class="eyebrow">N° 02 <span lang="en">Green tea</span></p>
+    <h2 class="title">Té<br><em>Verde</em></h2>
+  </div>
+  <ul class="cards">
+    <li class="card reveal" style="--i:1"><img class="card__photo" src="./assets/tea/curcuma-peach.webp" alt="" loading="lazy"><h3 class="card__name">Cúrcuma Peach<small class="card__translation" lang="en">Turmeric Peach</small></h3><p class="card__desc">Té verde, cúrcuma y durazno.</p><p class="card__desc card__desc--en" lang="en">Green tea, turmeric and peach.</p></li>
+    <li class="card reveal" style="--i:2"><img class="card__photo" src="./assets/tea/sencha-limon.webp" alt="" loading="lazy"><h3 class="card__name">Sencha Limón<small class="card__translation" lang="en">Lemon Sencha</small></h3><p class="card__desc">Té verde, cáscara y zacate de limón.</p><p class="card__desc card__desc--en" lang="en">Green tea, lemon peel and lemongrass.</p></li>
+    <li class="card reveal" style="--i:3"><img class="card__photo" src="./assets/tea/verde-pina-blueberry.webp" alt="" loading="lazy"><h3 class="card__name">Verde Piña Blueberry<small class="card__translation" lang="en">Pineapple Blueberry Green Tea</small></h3><p class="card__desc">Té verde, bayas de sauco, piña y mora azul.</p><p class="card__desc card__desc--en" lang="en">Green tea, elderberries, pineapple and blueberries.</p></li>
+  </ul>
+</section>
+          </section>
+          <section class="menu-slide" data-title="Té Negro · 1 / 2" data-slide="negro" aria-roledescription="diapositiva" aria-label="5 de 15: Té Negro · 1 / 2" hidden><header class="bar bar--top"><a class="brand"><img class="brand__mark" src="./assets/logo-mark.png" alt=""><img class="brand__word" src="./assets/logo-word.png" alt="Zenzia"></a><ul class="nav"><li class=""><span>Bebidas</span><small lang="en">Drinks</small></li><li class=""><span>Blanco</span><small lang="en">White</small></li><li class=""><span>Verde</span><small lang="en">Green</small></li><li class="is-active"><span>Negro</span><small lang="en">Black</small></li><li class=""><span>Rojo</span><small lang="en">Pu-erh</small></li><li class=""><span>Herbal</span><small lang="en">Herbal</small></li><li class=""><span>Frutal</span><small lang="en">Fruit</small></li><li class=""><span>Antojos</span><small lang="en">Snacks</small></li></ul></header><footer class="bar bar--bottom"><img class="tagline" src="./assets/logo-tag.png" alt="Barra de infusiones"><span class="pager"><b>05</b> / 15</span></footer>
+<section class="page page--cat" data-cat="negro" style="--cols:3">
+  <div class="head reveal" style="--i:0">
+    <p class="eyebrow">N° 03 <span lang="en">Black tea</span></p>
+    <h2 class="title">Té<br><em>Negro</em></h2><span class="part">1 / 2</span>
+  </div>
+  <ul class="cards">
+    <li class="card reveal" style="--i:1"><img class="card__photo" src="./assets/tea/abril-en-mexico.webp" alt="" loading="lazy"><h3 class="card__name">Abril en México<small class="card__translation" lang="en">April in Mexico</small></h3><p class="card__desc">Té negro, hoja de zarza, pétalos de rosa, cáscara de naranja, caléndula, aciano, mango y granadina.</p><p class="card__desc card__desc--en" lang="en">Black tea, blackberry leaves, rose petals, orange peel, marigold, cornflower, mango and grenadine.</p></li>
+    <li class="card reveal" style="--i:2"><img class="card__photo" src="./assets/tea/earl-grey.webp" alt="" loading="lazy"><h3 class="card__name" lang="en">Earl Grey</h3><p class="card__desc">Té negro y bergamota.</p><p class="card__desc card__desc--en" lang="en">Black tea and bergamot.</p></li>
+    <li class="card reveal" style="--i:3"><img class="card__photo" src="./assets/tea/english-breakfast.webp" alt="" loading="lazy"><h3 class="card__name" lang="en">English Breakfast</h3><p class="card__desc">Té negro.</p><p class="card__desc card__desc--en" lang="en">Black tea.</p></li>
+  </ul>
+</section>
+          </section>
+          <section class="menu-slide" data-title="Té Negro · 2 / 2" data-slide="negro" aria-roledescription="diapositiva" aria-label="6 de 15: Té Negro · 2 / 2" hidden><header class="bar bar--top"><a class="brand"><img class="brand__mark" src="./assets/logo-mark.png" alt=""><img class="brand__word" src="./assets/logo-word.png" alt="Zenzia"></a><ul class="nav"><li class=""><span>Bebidas</span><small lang="en">Drinks</small></li><li class=""><span>Blanco</span><small lang="en">White</small></li><li class=""><span>Verde</span><small lang="en">Green</small></li><li class="is-active"><span>Negro</span><small lang="en">Black</small></li><li class=""><span>Rojo</span><small lang="en">Pu-erh</small></li><li class=""><span>Herbal</span><small lang="en">Herbal</small></li><li class=""><span>Frutal</span><small lang="en">Fruit</small></li><li class=""><span>Antojos</span><small lang="en">Snacks</small></li></ul></header><footer class="bar bar--bottom"><img class="tagline" src="./assets/logo-tag.png" alt="Barra de infusiones"><span class="pager"><b>06</b> / 15</span></footer>
+<section class="page page--cat" data-cat="negro" style="--cols:3">
+  <div class="head reveal" style="--i:0">
+    <p class="eyebrow">N° 03 <span lang="en">Black tea</span></p>
+    <h2 class="title">Té<br><em>Negro</em></h2><span class="part">2 / 2</span>
+  </div>
+  <ul class="cards">
+    <li class="card reveal" style="--i:1"><img class="card__photo" src="./assets/tea/mango-tropical.webp" alt="" loading="lazy"><h3 class="card__name">Mango Tropical<small class="card__translation" lang="en">Tropical Mango</small></h3><p class="card__desc">Té negro, pétalos de rosa, cáscara de naranja, caléndula, aciano, hoja de zarza y mango.</p><p class="card__desc card__desc--en" lang="en">Black tea, rose petals, orange peel, marigold, cornflower, blackberry leaves and mango.</p></li>
+    <li class="card reveal" style="--i:2"><img class="card__photo" src="./assets/tea/oriental-spice.webp" alt="" loading="lazy"><h3 class="card__name" lang="en">Oriental Spice<small class="card__translation" lang="es">Especias orientales</small></h3><p class="card__desc">Té negro con canela, jengibre, clavo y especias aromáticas.</p><p class="card__desc card__desc--en" lang="en">Black tea with cinnamon, ginger, cloves and aromatic spices.</p></li>
+    <li class="card reveal" style="--i:3"><img class="card__photo" src="./assets/tea/tentacion-divina.webp" alt="" loading="lazy"><h3 class="card__name">Tentación Divina<small class="card__translation" lang="en">Divine Temptation</small></h3><p class="card__desc">Té negro, almendra y turrón.</p><p class="card__desc card__desc--en" lang="en">Black tea, almonds and nougat.</p></li>
+  </ul>
+</section>
+          </section>
+          <section class="menu-slide" data-title="Té Rojo" data-slide="rojo" aria-roledescription="diapositiva" aria-label="7 de 15: Té Rojo" hidden><header class="bar bar--top"><a class="brand"><img class="brand__mark" src="./assets/logo-mark.png" alt=""><img class="brand__word" src="./assets/logo-word.png" alt="Zenzia"></a><ul class="nav"><li class=""><span>Bebidas</span><small lang="en">Drinks</small></li><li class=""><span>Blanco</span><small lang="en">White</small></li><li class=""><span>Verde</span><small lang="en">Green</small></li><li class=""><span>Negro</span><small lang="en">Black</small></li><li class="is-active"><span>Rojo</span><small lang="en">Pu-erh</small></li><li class=""><span>Herbal</span><small lang="en">Herbal</small></li><li class=""><span>Frutal</span><small lang="en">Fruit</small></li><li class=""><span>Antojos</span><small lang="en">Snacks</small></li></ul></header><footer class="bar bar--bottom"><img class="tagline" src="./assets/logo-tag.png" alt="Barra de infusiones"><span class="pager"><b>07</b> / 15</span></footer>
+<section class="page page--cat" data-cat="rojo" style="--cols:3">
+  <div class="head reveal" style="--i:0">
+    <p class="eyebrow">N° 04 <span lang="en">Pu-erh tea</span></p>
+    <h2 class="title">Té<br><em>Rojo</em></h2>
+  </div>
+  <ul class="cards">
+    <li class="card reveal" style="--i:1"><img class="card__photo" src="./assets/tea/pu-erh-chai-tibet.webp" alt="" loading="lazy"><h3 class="card__name">Pu-erh Chai Tibet<small class="card__translation" lang="en">Tibetan Chai Pu-erh</small></h3><p class="card__desc">Pu-erh, cardamomo y canela.</p><p class="card__desc card__desc--en" lang="en">Pu-erh tea, cardamom and cinnamon.</p></li>
+    <li class="card reveal" style="--i:2"><img class="card__photo" src="./assets/tea/pu-erh-nepal.webp" alt="" loading="lazy"><h3 class="card__name">Pu-erh Nepal</h3><p class="card__desc">Pu-erh, trozos de almendra y caramelo.</p><p class="card__desc card__desc--en" lang="en">Pu-erh tea, almond pieces and caramel.</p></li>
+    <li class="card reveal" style="--i:3"><img class="card__photo" src="./assets/tea/pu-erh-frutos-rojos.webp" alt="" loading="lazy"><h3 class="card__name">Pu-erh Frutos Rojos<small class="card__translation" lang="en">Red Berry Pu-erh</small></h3><p class="card__desc">Betabel, escaramujo, cáscara de naranja, cacao y frutos rojos.</p><p class="card__desc card__desc--en" lang="en">Beetroot, rosehip, orange peel, cocoa and red berries.</p></li>
+  </ul>
+</section>
+          </section>
+          <section class="menu-slide" data-title="Tisana Herbal · 1 / 2" data-slide="herbal" aria-roledescription="diapositiva" aria-label="8 de 15: Tisana Herbal · 1 / 2" hidden><header class="bar bar--top"><a class="brand"><img class="brand__mark" src="./assets/logo-mark.png" alt=""><img class="brand__word" src="./assets/logo-word.png" alt="Zenzia"></a><ul class="nav"><li class=""><span>Bebidas</span><small lang="en">Drinks</small></li><li class=""><span>Blanco</span><small lang="en">White</small></li><li class=""><span>Verde</span><small lang="en">Green</small></li><li class=""><span>Negro</span><small lang="en">Black</small></li><li class=""><span>Rojo</span><small lang="en">Pu-erh</small></li><li class="is-active"><span>Herbal</span><small lang="en">Herbal</small></li><li class=""><span>Frutal</span><small lang="en">Fruit</small></li><li class=""><span>Antojos</span><small lang="en">Snacks</small></li></ul></header><footer class="bar bar--bottom"><img class="tagline" src="./assets/logo-tag.png" alt="Barra de infusiones"><span class="pager"><b>08</b> / 15</span></footer>
+<section class="page page--cat" data-cat="herbal" style="--cols:3">
+  <div class="head reveal" style="--i:0">
+    <p class="eyebrow">N° 05 <span lang="en">Herbal infusions</span></p>
+    <h2 class="title">Tisana<br><em>Herbal</em></h2><span class="part">1 / 2</span>
+  </div>
+  <ul class="cards">
+    <li class="card reveal" style="--i:1"><img class="card__photo" src="./assets/tea/icebreaker.webp" alt="" loading="lazy"><h3 class="card__name" lang="en">Icebreaker</h3><p class="card__desc">Flor de jamaica, menta, hierbabuena, ortiga, zacate de limón y hoja de zarza.</p><p class="card__desc card__desc--en" lang="en">Hibiscus, mint, spearmint, nettle, lemongrass and blackberry leaves.</p></li>
+    <li class="card reveal" style="--i:2"><img class="card__photo" src="./assets/tea/manzanilla-lavanda.webp" alt="" loading="lazy"><h3 class="card__name">Manzanilla Lavanda<small class="card__translation" lang="en">Chamomile Lavender</small></h3><p class="card__desc">Manzanilla y lavanda.</p><p class="card__desc card__desc--en" lang="en">Chamomile and lavender.</p></li>
+    <li class="card reveal" style="--i:3"><img class="card__photo" src="./assets/tea/relax.webp" alt="" loading="lazy"><h3 class="card__name" lang="en">Relax</h3><p class="card__desc">Zarza, manzanilla, menta, melisa, brezo, lavanda y azahar.</p><p class="card__desc card__desc--en" lang="en">Blackberry leaves, chamomile, mint, lemon balm, heather, lavender and orange blossom.</p></li>
+  </ul>
+</section>
+          </section>
+          <section class="menu-slide" data-title="Tisana Herbal · 2 / 2" data-slide="herbal" aria-roledescription="diapositiva" aria-label="9 de 15: Tisana Herbal · 2 / 2" hidden><header class="bar bar--top"><a class="brand"><img class="brand__mark" src="./assets/logo-mark.png" alt=""><img class="brand__word" src="./assets/logo-word.png" alt="Zenzia"></a><ul class="nav"><li class=""><span>Bebidas</span><small lang="en">Drinks</small></li><li class=""><span>Blanco</span><small lang="en">White</small></li><li class=""><span>Verde</span><small lang="en">Green</small></li><li class=""><span>Negro</span><small lang="en">Black</small></li><li class=""><span>Rojo</span><small lang="en">Pu-erh</small></li><li class="is-active"><span>Herbal</span><small lang="en">Herbal</small></li><li class=""><span>Frutal</span><small lang="en">Fruit</small></li><li class=""><span>Antojos</span><small lang="en">Snacks</small></li></ul></header><footer class="bar bar--bottom"><img class="tagline" src="./assets/logo-tag.png" alt="Barra de infusiones"><span class="pager"><b>09</b> / 15</span></footer>
+<section class="page page--cat" data-cat="herbal" style="--cols:2">
+  <div class="head reveal" style="--i:0">
+    <p class="eyebrow">N° 05 <span lang="en">Herbal infusions</span></p>
+    <h2 class="title">Tisana<br><em>Herbal</em></h2><span class="part">2 / 2</span>
+  </div>
+  <ul class="cards">
+    <li class="card reveal" style="--i:1"><img class="card__photo" src="./assets/tea/rooibos-bourbon-vainilla.webp" alt="" loading="lazy"><h3 class="card__name">Rooibos Bourbon Vainilla<small class="card__translation" lang="en">Bourbon Vanilla Rooibos</small></h3><p class="card__desc">Rooibos y vainilla bourbon.</p><p class="card__desc card__desc--en" lang="en">Rooibos and bourbon vanilla.</p></li>
+    <li class="card reveal" style="--i:2"><img class="card__photo" src="./assets/tea/rooibos-chocopraline.webp" alt="" loading="lazy"><h3 class="card__name">Rooibos Chocopraline</h3><p class="card__desc">Rooibos, honey bush, chocolate, almendra, fresa y pétalos de rosa.</p><p class="card__desc card__desc--en" lang="en">Rooibos, honeybush, chocolate, almonds, strawberries and rose petals.</p></li>
+  </ul>
+</section>
+          </section>
+          <section class="menu-slide" data-title="Tisana Frutal · 1 / 5" data-slide="frutal" aria-roledescription="diapositiva" aria-label="10 de 15: Tisana Frutal · 1 / 5" hidden><header class="bar bar--top"><a class="brand"><img class="brand__mark" src="./assets/logo-mark.png" alt=""><img class="brand__word" src="./assets/logo-word.png" alt="Zenzia"></a><ul class="nav"><li class=""><span>Bebidas</span><small lang="en">Drinks</small></li><li class=""><span>Blanco</span><small lang="en">White</small></li><li class=""><span>Verde</span><small lang="en">Green</small></li><li class=""><span>Negro</span><small lang="en">Black</small></li><li class=""><span>Rojo</span><small lang="en">Pu-erh</small></li><li class=""><span>Herbal</span><small lang="en">Herbal</small></li><li class="is-active"><span>Frutal</span><small lang="en">Fruit</small></li><li class=""><span>Antojos</span><small lang="en">Snacks</small></li></ul></header><footer class="bar bar--bottom"><img class="tagline" src="./assets/logo-tag.png" alt="Barra de infusiones"><span class="pager"><b>10</b> / 15</span></footer>
+<section class="page page--cat" data-cat="frutal" style="--cols:3">
+  <div class="head reveal" style="--i:0">
+    <p class="eyebrow">N° 06 <span lang="en">Fruit infusions</span></p>
+    <h2 class="title">Tisana<br><em>Frutal</em></h2><span class="part">1 / 5</span>
+  </div>
+  <ul class="cards">
+    <li class="card reveal" style="--i:1"><img class="card__photo" src="./assets/tea/bora-bora.webp" alt="" loading="lazy"><h3 class="card__name">Bora Bora</h3><p class="card__desc">Jamaica, manzana, escaramujo, jengibre, naranja, maracuyá, chabacano, caléndula, fresa, frambuesa y limón.</p><p class="card__desc card__desc--en" lang="en">Hibiscus, apple, rosehip, ginger, orange, passion fruit, apricot, marigold, strawberry, raspberry and lemon.</p></li>
+    <li class="card reveal" style="--i:2"><img class="card__photo" src="./assets/tea/chocolatine.webp" alt="" loading="lazy"><h3 class="card__name">Chocolatine</h3><p class="card__desc">Chocolate y nueces.</p><p class="card__desc card__desc--en" lang="en">Chocolate and nuts.</p></li>
+    <li class="card reveal" style="--i:3"><img class="card__photo" src="./assets/tea/dragonblend.webp" alt="" loading="lazy"><h3 class="card__name" lang="en">Dragonblend</h3><p class="card__desc">Manzana, pitahaya roja, arándano, bayas goji, kiwi y piña.</p><p class="card__desc card__desc--en" lang="en">Apple, red dragon fruit, cranberries, goji berries, kiwi and pineapple.</p></li>
+  </ul>
+</section>
+          </section>
+          <section class="menu-slide" data-title="Tisana Frutal · 2 / 5" data-slide="frutal" aria-roledescription="diapositiva" aria-label="11 de 15: Tisana Frutal · 2 / 5" hidden><header class="bar bar--top"><a class="brand"><img class="brand__mark" src="./assets/logo-mark.png" alt=""><img class="brand__word" src="./assets/logo-word.png" alt="Zenzia"></a><ul class="nav"><li class=""><span>Bebidas</span><small lang="en">Drinks</small></li><li class=""><span>Blanco</span><small lang="en">White</small></li><li class=""><span>Verde</span><small lang="en">Green</small></li><li class=""><span>Negro</span><small lang="en">Black</small></li><li class=""><span>Rojo</span><small lang="en">Pu-erh</small></li><li class=""><span>Herbal</span><small lang="en">Herbal</small></li><li class="is-active"><span>Frutal</span><small lang="en">Fruit</small></li><li class=""><span>Antojos</span><small lang="en">Snacks</small></li></ul></header><footer class="bar bar--bottom"><img class="tagline" src="./assets/logo-tag.png" alt="Barra de infusiones"><span class="pager"><b>11</b> / 15</span></footer>
+<section class="page page--cat" data-cat="frutal" style="--cols:3">
+  <div class="head reveal" style="--i:0">
+    <p class="eyebrow">N° 06 <span lang="en">Fruit infusions</span></p>
+    <h2 class="title">Tisana<br><em>Frutal</em></h2><span class="part">2 / 5</span>
+  </div>
+  <ul class="cards">
+    <li class="card reveal" style="--i:1"><img class="card__photo" src="./assets/tea/fantasia-tropical.webp" alt="" loading="lazy"><h3 class="card__name">Fantasía Tropical<small class="card__translation" lang="en">Tropical Fantasy</small></h3><p class="card__desc">Manzana, jamaica, sauco, escaramujo, fresa, maracuyá, kiwi, rosa, aciano, frambuesa y girasol.</p><p class="card__desc card__desc--en" lang="en">Apple, hibiscus, elderberries, rosehip, strawberry, passion fruit, kiwi, rose, cornflower, raspberry and sunflower.</p></li>
+    <li class="card reveal" style="--i:2"><img class="card__photo" src="./assets/tea/fresa-kiwi.webp" alt="" loading="lazy"><h3 class="card__name">Fresa Kiwi<small class="card__translation" lang="en">Strawberry Kiwi</small></h3><p class="card__desc">Kiwi, flor de jamaica, escaramujo, naranja, grosella negra y fresa.</p><p class="card__desc card__desc--en" lang="en">Kiwi, hibiscus, rosehip, orange, blackcurrant and strawberry.</p></li>
+    <li class="card reveal" style="--i:3"><img class="card__photo" src="./assets/tea/jengibre-mandarin.webp" alt="" loading="lazy"><h3 class="card__name">Jengibre Mandarín<small class="card__translation" lang="en">Mandarin Ginger</small></h3><p class="card__desc">Manzana, pera, dátil, higo, naranja, arándano y jengibre.</p><p class="card__desc card__desc--en" lang="en">Apple, pear, dates, figs, orange, cranberries and ginger.</p></li>
+  </ul>
+</section>
+          </section>
+          <section class="menu-slide" data-title="Tisana Frutal · 3 / 5" data-slide="frutal" aria-roledescription="diapositiva" aria-label="12 de 15: Tisana Frutal · 3 / 5" hidden><header class="bar bar--top"><a class="brand"><img class="brand__mark" src="./assets/logo-mark.png" alt=""><img class="brand__word" src="./assets/logo-word.png" alt="Zenzia"></a><ul class="nav"><li class=""><span>Bebidas</span><small lang="en">Drinks</small></li><li class=""><span>Blanco</span><small lang="en">White</small></li><li class=""><span>Verde</span><small lang="en">Green</small></li><li class=""><span>Negro</span><small lang="en">Black</small></li><li class=""><span>Rojo</span><small lang="en">Pu-erh</small></li><li class=""><span>Herbal</span><small lang="en">Herbal</small></li><li class="is-active"><span>Frutal</span><small lang="en">Fruit</small></li><li class=""><span>Antojos</span><small lang="en">Snacks</small></li></ul></header><footer class="bar bar--bottom"><img class="tagline" src="./assets/logo-tag.png" alt="Barra de infusiones"><span class="pager"><b>12</b> / 15</span></footer>
+<section class="page page--cat" data-cat="frutal" style="--cols:3">
+  <div class="head reveal" style="--i:0">
+    <p class="eyebrow">N° 06 <span lang="en">Fruit infusions</span></p>
+    <h2 class="title">Tisana<br><em>Frutal</em></h2><span class="part">3 / 5</span>
+  </div>
+  <ul class="cards">
+    <li class="card reveal" style="--i:1"><img class="card__photo" src="./assets/tea/manila.webp" alt="" loading="lazy"><h3 class="card__name">Manila</h3><p class="card__desc">Mango, manzana y pasas.</p><p class="card__desc card__desc--en" lang="en">Mango, apple and raisins.</p></li>
+    <li class="card reveal" style="--i:2"><img class="card__photo" src="./assets/tea/manzana-arandano.webp" alt="" loading="lazy"><h3 class="card__name">Manzana Arándano<small class="card__translation" lang="en">Apple Cranberry</small></h3><p class="card__desc">Manzana y arándano.</p><p class="card__desc card__desc--en" lang="en">Apple and cranberries.</p></li>
+    <li class="card reveal" style="--i:3"><img class="card__photo" src="./assets/tea/moras-de-la-selva.webp" alt="" loading="lazy"><h3 class="card__name">Moras de la Selva<small class="card__translation" lang="en">Forest Berries</small></h3><p class="card__desc">Pasas, jamaica, moras, betabel, fresa, zarzamora y frambuesa.</p><p class="card__desc card__desc--en" lang="en">Raisins, hibiscus, berries, beetroot, strawberries, blackberries and raspberries.</p></li>
+  </ul>
+</section>
+          </section>
+          <section class="menu-slide" data-title="Tisana Frutal · 4 / 5" data-slide="frutal" aria-roledescription="diapositiva" aria-label="13 de 15: Tisana Frutal · 4 / 5" hidden><header class="bar bar--top"><a class="brand"><img class="brand__mark" src="./assets/logo-mark.png" alt=""><img class="brand__word" src="./assets/logo-word.png" alt="Zenzia"></a><ul class="nav"><li class=""><span>Bebidas</span><small lang="en">Drinks</small></li><li class=""><span>Blanco</span><small lang="en">White</small></li><li class=""><span>Verde</span><small lang="en">Green</small></li><li class=""><span>Negro</span><small lang="en">Black</small></li><li class=""><span>Rojo</span><small lang="en">Pu-erh</small></li><li class=""><span>Herbal</span><small lang="en">Herbal</small></li><li class="is-active"><span>Frutal</span><small lang="en">Fruit</small></li><li class=""><span>Antojos</span><small lang="en">Snacks</small></li></ul></header><footer class="bar bar--bottom"><img class="tagline" src="./assets/logo-tag.png" alt="Barra de infusiones"><span class="pager"><b>13</b> / 15</span></footer>
+<section class="page page--cat" data-cat="frutal" style="--cols:2">
+  <div class="head reveal" style="--i:0">
+    <p class="eyebrow">N° 06 <span lang="en">Fruit infusions</span></p>
+    <h2 class="title">Tisana<br><em>Frutal</em></h2><span class="part">4 / 5</span>
+  </div>
+  <ul class="cards">
+    <li class="card reveal" style="--i:1"><img class="card__photo" src="./assets/tea/moscu.webp" alt="" loading="lazy"><h3 class="card__name">Moscú<small class="card__translation" lang="en">Moscow</small></h3><p class="card__desc">Manzana, canela, almendra, betabel y caramelo.</p><p class="card__desc card__desc--en" lang="en">Apple, cinnamon, almonds, beetroot and caramel.</p></li>
+    <li class="card reveal" style="--i:2"><img class="card__photo" src="./assets/tea/papantla.webp" alt="" loading="lazy"><h3 class="card__name">Papantla</h3><p class="card__desc">Manzana, piña, papaya, mango, durazno y vainilla.</p><p class="card__desc card__desc--en" lang="en">Apple, pineapple, papaya, mango, peach and vanilla.</p></li>
+  </ul>
+</section>
+          </section>
+          <section class="menu-slide" data-title="Tisana Frutal · 5 / 5" data-slide="frutal" aria-roledescription="diapositiva" aria-label="14 de 15: Tisana Frutal · 5 / 5" hidden><header class="bar bar--top"><a class="brand"><img class="brand__mark" src="./assets/logo-mark.png" alt=""><img class="brand__word" src="./assets/logo-word.png" alt="Zenzia"></a><ul class="nav"><li class=""><span>Bebidas</span><small lang="en">Drinks</small></li><li class=""><span>Blanco</span><small lang="en">White</small></li><li class=""><span>Verde</span><small lang="en">Green</small></li><li class=""><span>Negro</span><small lang="en">Black</small></li><li class=""><span>Rojo</span><small lang="en">Pu-erh</small></li><li class=""><span>Herbal</span><small lang="en">Herbal</small></li><li class="is-active"><span>Frutal</span><small lang="en">Fruit</small></li><li class=""><span>Antojos</span><small lang="en">Snacks</small></li></ul></header><footer class="bar bar--bottom"><img class="tagline" src="./assets/logo-tag.png" alt="Barra de infusiones"><span class="pager"><b>14</b> / 15</span></footer>
+<section class="page page--cat" data-cat="frutal" style="--cols:2">
+  <div class="head reveal" style="--i:0">
+    <p class="eyebrow">N° 06 <span lang="en">Fruit infusions</span></p>
+    <h2 class="title">Tisana<br><em>Frutal</em></h2><span class="part">5 / 5</span>
+  </div>
+  <ul class="cards">
+    <li class="card reveal" style="--i:1"><img class="card__photo" src="./assets/tea/raspberry-dream.webp" alt="" loading="lazy"><h3 class="card__name" lang="en">Raspberry Dream<small class="card__translation" lang="es">Sueño de frambuesa</small></h3><p class="card__desc">Manzana, jamaica, mango, naranja, rosa, girasol y frambuesa.</p><p class="card__desc card__desc--en" lang="en">Apple, hibiscus, mango, orange, rose, sunflower and raspberry.</p></li>
+    <li class="card reveal" style="--i:2"><img class="card__photo" src="./assets/tea/zurich.webp" alt="" loading="lazy"><h3 class="card__name">Zurich</h3><p class="card__desc">Manzana, turrón y almendra.</p><p class="card__desc card__desc--en" lang="en">Apple, nougat and almonds.</p></li>
+  </ul>
+</section>
+          </section>
+          <section class="menu-slide" data-title="Extras y antojos / Add-ons &amp; Snacks" data-slide="snacks" aria-roledescription="diapositiva" aria-label="15 de 15: Extras y antojos / Add-ons &amp; Snacks" hidden><header class="bar bar--top"><a class="brand"><img class="brand__mark" src="./assets/logo-mark.png" alt=""><img class="brand__word" src="./assets/logo-word.png" alt="Zenzia"></a><ul class="nav"><li class=""><span>Bebidas</span><small lang="en">Drinks</small></li><li class=""><span>Blanco</span><small lang="en">White</small></li><li class=""><span>Verde</span><small lang="en">Green</small></li><li class=""><span>Negro</span><small lang="en">Black</small></li><li class=""><span>Rojo</span><small lang="en">Pu-erh</small></li><li class=""><span>Herbal</span><small lang="en">Herbal</small></li><li class=""><span>Frutal</span><small lang="en">Fruit</small></li><li class="is-active"><span>Antojos</span><small lang="en">Snacks</small></li></ul></header><footer class="bar bar--bottom"><img class="tagline" src="./assets/logo-tag.png" alt="Barra de infusiones"><span class="pager"><b>15</b> / 15</span></footer>
+<section class="page page--snacks">
+  <div class="head reveal" style="--i:0">
+    <p class="eyebrow">Extras <span lang="en">Add-ons &amp; snacks</span></p>
+    <h2 class="title">Algo para<br><em>acompañar.</em></h2>
+    <p class="title__translation" lang="en">Something to enjoy with your tea.</p>
+    <p class="addon"><span>Leche · <span lang="en">Milk</span></span><b>+$10</b></p>
+  </div>
+  <ul class="tiles"><li class="tile reveal" style="--i:1"><span class="tile__name">Mini Muffin</span><span class="tile__amount"><sup>$</sup>50</span></li><li class="tile reveal" style="--i:2"><span class="tile__name">Brownie</span><span class="tile__amount"><sup>$</sup>45</span></li><li class="tile reveal" style="--i:3"><span class="tile__name">Galleta estilo NY<small lang="en">NY Cookie</small></span><span class="tile__amount"><sup>$</sup>55</span></li><li class="tile reveal" style="--i:4"><span class="tile__name">Croissant de jamón y queso<small lang="en">Ham &amp; Cheese Croissant</small></span><span class="tile__amount"><sup>$</sup>70</span></li><li class="tile reveal" style="--i:5"><span class="tile__name">Empanada de pepperoni<small lang="en">Pepperoni Pasty</small></span><span class="tile__amount"><sup>$</sup>75</span></li></ul>
+</section>
+          </section>
+        </div>
+      </div>
+    </div>
+    <p id="navigation-help" class="sr-only">Presentación automática del menú. Usa las flechas para cambiar de página, espacio para pausar o continuar y F para pantalla completa.</p>
+    <p id="status" class="sr-only" role="status" aria-live="off" aria-atomic="true"></p>
   </main>
 </body>
 </html>
