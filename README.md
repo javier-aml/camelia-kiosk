@@ -33,12 +33,22 @@ also served by https://icy-coast-0b4c32c0f.5.azurestaticapps.net/:
 Earl Grey (00:27), Mango Tropical and Tentación Divina (00:32), Pu-erh Frutos
 Rojos (00:42), Icebreaker (00:47), and Manzana Arándano (01:17).
 
+Four standalone drink slides use the supplied transparent photos in `assets/drinks/`.
+During autoplay, one cup appears for 9 seconds after a random interval of 2–4 menu
+pages (excluding the cover). The cups are chosen randomly without repeating until
+all four have appeared, and never repeat back-to-back across cycles. These breaks
+have no menu navigation, prices or page number. The menu keeps its original order,
+15-page numbering and URLs, and resumes at the next page after each break.
+
 ## Playback
 
 Edit **config.js** and reload to change playback:
 
 - `slideDurationMs`: default time per page; `slideDurationsMs` overrides pages
   individually, e.g. `{ 1: 5000, 2: 10000 }`.
+- `drinkBreaks`: enable/disable the separate cup slides during autoplay.
+- `drinkBreakDurationMs`, `drinkBreakMinPages`, `drinkBreakMaxPages`: break duration
+  and random interval between cup slides.
 - `autoplay`, `loop`, `startSlide`: playback behavior and first page.
 - `transition`: `fade`, `slide`, or `none`; `transitionDurationMs`: animation time.
 - `fit`: `cover` fills the display; `contain` shows the whole page with margins.
@@ -47,7 +57,9 @@ Edit **config.js** and reload to change playback:
 
 Space pauses/resumes, Left/Right change pages, Home/End jump to the first/last
 page, and F toggles fullscreen. A URL such as `index.html#pagina-4` opens on
-that page. Use the browser's fullscreen or kiosk mode to hide its chrome.
+that page. Manual navigation skips cup breaks; Left during a break returns to the
+preceding menu page and Right continues to the next one. Use the browser's fullscreen
+or kiosk mode to hide its chrome.
 
 The menu uses a fixed white background and `color-scheme: only light` to opt out
 of browser auto-darkening. Product names use 58–66 px and ingredient descriptions
@@ -55,9 +67,10 @@ of browser auto-darkening. Product names use 58–66 px and ingredient descripti
 
 ## Files
 
-- `index.html`: the fifteen bilingual menu pages.
+- `index.html`: the fifteen bilingual menu pages and four separate cup slides.
 - `styles.css`: design tokens, layout and per-category accent colors.
 - `config.js`: slideshow settings, loaded before `script.js`.
 - `script.js`: autoplay, transitions, screen fitting and navigation.
 - `assets/logo-*.png`: brand lockup split into mark, wordmark and tagline.
 - `assets/tea/*.webp`: circular blend photos.
+- `assets/drinks/*.webp`: transparent photos of prepared drinks.

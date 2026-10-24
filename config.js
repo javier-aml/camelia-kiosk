@@ -5,8 +5,12 @@ window.ZENZIA_CONFIG = {
   slideDurationsMs: {
     1: 5000,                      // Cover: 5 seconds.
     2: 10000,                     // Bebidas: 10 seconds.
-    15: 12000,                     // Add-ons & Snacks: 12 seconds.
+    15: 12000,                    // Add-ons & Snacks: 12 seconds.
   },
+  drinkBreaks: true,              // Separate cup photos, randomly inserted during autoplay.
+  drinkBreakDurationMs: 9000,
+  drinkBreakMinPages: 2,          // Show a cup after 2–4 menu pages (excluding the cover).
+  drinkBreakMaxPages: 4,
   loop: true,                     // Restart at page 1 after the last page.
   startSlide: 1,                  // A #pagina-N URL takes priority.
 

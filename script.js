@@ -4,6 +4,7 @@
 
   const config = {
     autoplay: true, slideDurationMs: 15000, slideDurationsMs: {}, loop: true,
+    drinkBreaks: true, drinkBreakDurationMs: 9000, drinkBreakMinPages: 2, drinkBreakMaxPages: 4,
     startSlide: 1, transition: 'slide', transitionDurationMs: 700, fit: 'cover',
     pauseOnHover: false, pauseWhenHidden: true, hideCursorAfterMs: 2500,
     keyboardNavigation: true, clickNavigation: true, swipeNavigation: true,
@@ -14,12 +15,22 @@
   const frame = document.querySelector('#slide-frame');
   const artwork = document.querySelector('#artwork');
   const slides = [...document.querySelectorAll('.menu-slide')];
+  const drinkSlides = [...document.querySelectorAll('.drink-slide')];
+  const allSlides = [...slides, ...drinkSlides];
   const status = document.querySelector('#status');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const number = (value, fallback, min = 0, max = 86400000) =>
     typeof value === 'number' && Number.isFinite(value) ? Math.max(min, Math.min(max, value)) : fallback;
   const transitionDuration = number(config.transitionDurationMs, 700, 0, 10000);
+  const minBreakPages = Math.floor(number(config.drinkBreakMinPages, 2, 1, slides.length));
+  const maxBreakPages = Math.floor(number(config.drinkBreakMaxPages, Math.max(4, minBreakPages), minBreakPages, slides.length));
+  const randomBreakGap = () => minBreakPages + Math.floor(Math.random() * (maxBreakPages - minBreakPages + 1));
   let current = 0;
+  let activeSlide = slides[0];
+  let activeDrink = null;
+  let lastDrink = null;
+  let drinkPool = [];
+  let pagesUntilDrink = randomBreakGap();
   let paused = !config.autoplay;
   let hovered = false;
   let timer;
@@ -49,24 +60,49 @@
     if (paused || (hovered && config.pauseOnHover) ||
         (document.hidden && config.pauseWhenHidden) || (!config.loop && current === slides.length - 1)) return;
     const override = config.slideDurationsMs?.[current + 1];
-    const duration = number(override, number(config.slideDurationMs, 15000, 1000), 1000);
-    timer = setTimeout(() => showPage(current + 1, 1), Math.max(duration, transitionDuration + 250));
+    const duration = activeDrink ? number(config.drinkBreakDurationMs, 9000, 1000)
+      : number(override, number(config.slideDurationMs, 15000, 1000), 1000);
+    timer = setTimeout(advanceAutoplay, Math.max(duration, transitionDuration + 250));
+  }
+
+  function advanceAutoplay() {
+    // A break leaves the menu index and URL untouched; resume at the next page.
+    if (activeDrink) {
+      showPage(current + 1, 1);
+      return;
+    }
+    if (config.drinkBreaks && drinkSlides.length && current > 0 &&
+        (config.loop || current < slides.length - 1) &&
+        --pagesUntilDrink <= 0) {
+      if (!drinkPool.length) drinkPool = [...drinkSlides];
+      const candidates = drinkPool.length > 1 ? drinkPool.filter(slide => slide !== lastDrink) : drinkPool;
+      const chosen = candidates[Math.floor(Math.random() * candidates.length)];
+      drinkPool.splice(drinkPool.indexOf(chosen), 1);
+      lastDrink = activeDrink = chosen;
+      pagesUntilDrink = randomBreakGap();
+      transitionPage(activeSlide, chosen, 1);
+      activeSlide = chosen;
+      status.textContent = `Bebida Zenzia: ${chosen.dataset.title}`;
+      schedule();
+      return;
+    }
+    showPage(current + 1, 1);
   }
 
   function transitionPage(from, to, direction) {
     const id = ++transitionId;
     animations.forEach(animation => animation.cancel());
     animations = [];
-    slides.forEach((slide, i) => {
-      slide.hidden = i !== to;
-      slide.inert = i !== to;
-      slide.setAttribute('aria-hidden', String(i !== to));
-      slide.style.zIndex = i === to ? '2' : '1';
+    allSlides.forEach(slide => {
+      slide.hidden = slide !== to;
+      slide.inert = slide !== to;
+      slide.setAttribute('aria-hidden', String(slide !== to));
+      slide.style.zIndex = slide === to ? '2' : '1';
     });
     if (from === to || reducedMotion.matches || config.transition === 'none' || !transitionDuration) return;
 
-    const outgoing = slides[from];
-    const incoming = slides[to];
+    const outgoing = from;
+    const incoming = to;
     const distance = config.transition === 'fade' ? 0 : 60 * direction;
     const options = { duration: transitionDuration, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'both' };
     outgoing.hidden = false;
@@ -89,16 +125,23 @@
   }
 
   function showPage(index, direction = Math.sign(index - current), updateHash = true) {
-    const previous = current;
+    const previous = activeSlide;
     current = config.loop ? (index % slides.length + slides.length) % slides.length
       : Math.max(0, Math.min(slides.length - 1, index));
-    transitionPage(previous, current, direction);
+    activeDrink = null;
+    activeSlide = slides[current];
+    transitionPage(previous, activeSlide, direction);
     status.textContent = `Página ${current + 1} de ${slides.length}: ${slides[current].dataset.title}`;
     if (updateHash) {
       try { history.replaceState(null, '', `#pagina-${current + 1}`); }
       catch { location.hash = `pagina-${current + 1}`; }
     }
     schedule();
+  }
+
+  function navigate(direction) {
+    // Back from a cup returns to the menu page that preceded it.
+    showPage(activeDrink && direction < 0 ? current : current + direction, direction);
   }
 
   async function toggleFullscreen() {
@@ -114,8 +157,8 @@
     if (event.altKey || event.ctrlKey || event.metaKey ||
         /INPUT|TEXTAREA|SELECT/.test(event.target.tagName) || event.target.isContentEditable) return;
     switch (event.key) {
-      case 'ArrowRight': case 'PageDown': event.preventDefault(); showPage(current + 1); break;
-      case 'ArrowLeft': case 'PageUp': event.preventDefault(); showPage(current - 1); break;
+      case 'ArrowRight': case 'PageDown': event.preventDefault(); navigate(1); break;
+      case 'ArrowLeft': case 'PageUp': event.preventDefault(); navigate(-1); break;
       case 'Home': event.preventDefault(); showPage(0); break;
       case 'End': event.preventDefault(); showPage(slides.length - 1); break;
       case ' ': event.preventDefault(); paused = !paused; schedule();
@@ -127,7 +170,7 @@
   if (config.clickNavigation) viewport.addEventListener('click', event => {
     if (Date.now() - lastSwipeAt < 500 || window.getSelection()?.toString()) return;
     const bounds = viewport.getBoundingClientRect();
-    showPage(current + (event.clientX - bounds.left < bounds.width / 2 ? -1 : 1));
+    navigate(event.clientX - bounds.left < bounds.width / 2 ? -1 : 1);
   });
 
   if (config.swipeNavigation) {
@@ -141,7 +184,7 @@
       const dy = event.changedTouches[0].clientY - touchStart.y;
       if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.5) {
         lastSwipeAt = Date.now();
-        showPage(current + (dx < 0 ? 1 : -1));
+        navigate(dx < 0 ? 1 : -1);
       }
       touchStart = null;
     }, { passive: true });
